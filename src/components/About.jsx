@@ -39,7 +39,7 @@ const About = () => {
           containerClass="mt-5 !text-black text-center"
         />
 
-        <div className="about-subtext">
+        <div className=" about-subtext">
           <p>
             {" "}
             To promote the understanding and appreciation of Chinese traditional

@@ -43,6 +43,7 @@ const BentoCard = ({ src, title, description }) => {
         loop
         muted
         autoPlay
+        playsInline
         className="absolute left-0 top-0 size-full object-cover object-center"
       />
       <div className="relative z-10 flex size-full flex-col justify-between p-5 text-blue-50">
@@ -52,14 +53,14 @@ const BentoCard = ({ src, title, description }) => {
               <p key={idx}>{paragraph}</p>
             ))}{" "}
           </h1>
-          {description && (
-            <div className="mt-3 max-w-64 space-y-3 text-xs leading-relaxed md:text-base ">
-              {description.split("\n").map((paragraph, idx) => (
-                <p key={idx}>{paragraph}</p>
-              ))}
-            </div>
-          )}
         </div>
+        {description && (
+          <div className="mt-3 max-w-64 space-y-3 text-xs leading-relaxed md:text-base ">
+            {description.split("\n").map((paragraph, idx) => (
+              <p key={idx}>{paragraph}</p>
+            ))}
+          </div>
+        )}
       </div>
       {title}
     </div>
@@ -68,25 +69,29 @@ const BentoCard = ({ src, title, description }) => {
 
 const BentoCardImage = ({ src, title, description }) => {
   return (
-    <div className="relative size-full">
-      <img
-        src={src}
-        alt={title}
-        className="absolute left-0 top-0 size-full object-cover object-center"
-      />
-      <div className="relative z-10 flex size-full flex-col justify-between p-5 text-blue-50">
-        <div>
+    <div>
+      {/* Image with title overlaid */}
+      <div className="relative w-full h-[400px]">
+        {" "}
+        {/* or use size-full if defined elsewhere */}
+        <img
+          src={src}
+          alt={title}
+          className="absolute left-0 top-0 w-full h-full object-cover object-center"
+        />
+        <div className="relative z-10 flex h-full flex-col justify-between p-5 text-blue-50">
           <h1 className="bento-title special-font">{title}</h1>
-          {description && (
-            <div className="mt-3 max-w-128 space-y-3  leading-relaxed md:text-base ">
-              {description.split("\n").map((paragraph, idx) => (
-                <p key={idx}>{paragraph}</p>
-              ))}
-            </div>
-          )}
         </div>
       </div>
-      {title}
+
+      {/* Description moved below image */}
+      {description && (
+        <div className="mt-3 space-y-3 leading-relaxed text-blue-50 md:text-base">
+          {description.split("\n").map((paragraph, idx) => (
+            <p key={idx}>{paragraph}</p>
+          ))}
+        </div>
+      )}
     </div>
   );
 };
@@ -115,8 +120,8 @@ const Features = () => {
             description={`With authentic 5th-generation Yang Style Tai Chi`}
           />
         </BentoTilt>
-        <div className="grid  grid-cols-2 grid-rows-2 gap-7">
-          <BentoTilt className="bento-tilt_1 row-span-1 md:col-span-1 md:row-span-2">
+        <div className="grid  grid-cols-2 grid-rows-1 gap-7">
+          <BentoTilt className="bento-tilt_1 md:col-span-1 ">
             <BentoCardImage
               src="img/1.jpg"
               title={`Tai Chi welcomes everyone`}
@@ -129,22 +134,7 @@ const Features = () => {
             <BentoCardImage
               src="img/2.webp"
               title={<>Our Lineage</>}
-              description={`\n \u00A0 \n We follow Master Tiancai Li, \n A 5th-generation Yang-style master, \n Direct Disciple of Grandmaster Yang Zhenduo, \n To preserve the true spirit of traditional Tai Chi.`}
-            />
-          </BentoTilt>
-
-          <BentoTilt className="bento-tilt_1 me-14 md:col-span-1 md:me-0 ">
-            <BentoCardImage
-              src="img/3.jpg"
-              title={<>What We Practice</>}
-              description="
- 24 Simplified Tai Chi
- 103 Traditional Yang-style Tai Chi
- 30 Tianlin Style Tai Chi
- Tai Chi Kungfu Fan
- Other traditional forms
-
-"
+              description={` We follow Master Tiancai Li, \n A 5th-generation Yang-style master, \n Direct Disciple of Grandmaster Yang Zhenduo, \n To preserve the true spirit of traditional Tai Chi.`}
             />
           </BentoTilt>
 
