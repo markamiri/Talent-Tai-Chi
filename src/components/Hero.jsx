@@ -3,18 +3,22 @@ import Button2 from "./Button2";
 import { TiLocationArrow } from "react-icons/ti";
 
 const Hero = () => {
-  const [currentIndex, setCurrentIndex] = useState(1);
   const totalImages = 4;
+  const [currentIndex, setCurrentIndex] = useState(1);
   const [isLoading, setIsLoading] = useState(true);
 
   const getImageSrc = (index) => `img/hero-${index}.JPG`;
 
+  // Auto-cycle slideshow every 5 seconds
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentIndex((prevIndex) => (prevIndex % totalImages) + 1);
+    }, 5000);
+    return () => clearInterval(interval);
+  }, []);
+
   const handleImageLoad = () => {
     setIsLoading(false);
-  };
-
-  const handleImageClick = () => {
-    setCurrentIndex((prevIndex) => (prevIndex % totalImages) + 1);
   };
 
   return (
@@ -34,41 +38,14 @@ const Hero = () => {
         className="relative z-10 h-dvh w-screen overflow-hidden rounded-lg bg-blue-75"
       >
         <div>
-          {/* Interactive image box (replaces mini video click) */}
-          <div className="mask-clip-path absolute-center absolute z-50 size-64 cursor-pointer overflow-hidden rounded-lg">
-            <img
-              src={getImageSrc((currentIndex % totalImages) + 1)}
-              alt="Interactive Hero"
-              loading="lazy"
-              width="256"
-              height="256"
-              onClick={handleImageClick}
-              onLoad={handleImageLoad}
-              className="size-64 origin-center scale-150 object-cover object-center transition-all duration-500 ease-in hover:scale-100 hover:opacity-100"
-            />
-          </div>
-
-          {/* Hidden secondary image if needed */}
+          {/* Fullscreen background hero image */}
           <img
             src={getImageSrc(currentIndex)}
-            alt="Next Hero"
-            loading="lazy"
-            width="256"
-            height="256"
-            className="absolute-center invisible absolute z-20 size-64 object-cover object-center"
-            onLoad={handleImageLoad}
-          />
-
-          {/* Full background hero image */}
-          <img
-            src={getImageSrc(
-              currentIndex === totalImages - 1 ? 1 : currentIndex
-            )}
-            alt="Background Hero"
-            loading="lazy"
+            alt={`Hero Slide ${currentIndex}`}
+            loading="eager"
             width="1920"
             height="1080"
-            className="absolute left-0 top-0 size-full object-cover object-center"
+            className="absolute left-0 top-0 size-full object-cover object-center transition-opacity duration-700"
             onLoad={handleImageLoad}
           />
         </div>
