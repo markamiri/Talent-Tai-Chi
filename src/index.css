@@ -4,6 +4,9 @@
 @tailwind components;
 @tailwind utilities;
 
+video {
+  pointer-events: none;
+}
 body {
   width: 100dvw;
   overflow-x: hidden;
