@@ -7,7 +7,7 @@ const Hero = () => {
   const [currentIndex, setCurrentIndex] = useState(1);
   const [isLoading, setIsLoading] = useState(true);
 
-  const getImageSrc = (index) => `img/hero-${index}.JPG`;
+  const getImageSrc = (index) => `img/hero-${index}.webp`;
 
   // Auto-cycle slideshow every 5 seconds (after load)
   useEffect(() => {
