@@ -115,10 +115,11 @@ const Features = () => {
 
         <BentoTilt className="border-hsla relative mb-7 h-96 w-full overflow-hidden rounded-md md:h-[65vh]">
           {" "}
-          <BentoCard
-            src="videos/feature-6.MP4"
+          <BentoCardImage
+            src="img/hero-4.webp"
             title={`Improve physical health, \n mental clarity, \n and emotional balance.`}
-            description={`With authentic 5th-generation Yang Style Tai Chi`}
+            description={`With authentic 5th-generation Yang Style Tai Chi
+                `}
           />
         </BentoTilt>
         <div className="grid  grid-cols-2 grid-rows-1 gap-7">

@@ -3,7 +3,7 @@ import Button2 from "./Button2";
 import { TiLocationArrow } from "react-icons/ti";
 
 const Hero = () => {
-  const totalImages = 4;
+  const totalImages = 1;
   const [currentIndex, setCurrentIndex] = useState(1);
   const [isLoading, setIsLoading] = useState(true);
 
@@ -41,8 +41,8 @@ const Hero = () => {
           src={getImageSrc(currentIndex)}
           alt={`Hero Slide ${currentIndex}`}
           loading="eager"
-          width="1920"
-          height="1080"
+          width="1280"
+          height="720"
           className={`absolute left-0 top-0 size-full object-cover object-center transition-opacity duration-700 ${
             isLoading ? "blur-sm" : "blur-0"
           }`}
