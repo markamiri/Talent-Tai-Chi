@@ -84,15 +84,6 @@ const BentoCardImage = ({ src, title, description }) => {
           <h1 className="bento-title special-font">{title}</h1>
         </div>
       </div>
-
-      {/* Description moved below image */}
-      {description && (
-        <div className="mt-3 space-y-3 leading-relaxed text-blue-50 md:text-base">
-          {description.split("\n").map((paragraph, idx) => (
-            <p key={idx}>{paragraph}</p>
-          ))}
-        </div>
-      )}
     </div>
   );
 };
@@ -113,12 +104,12 @@ const Features = () => {
           </p>
         </div>
 
-        <BentoTilt className="border-hsla relative mb-7 h-96 w-full overflow-hidden rounded-md md:h-[65vh]">
+        <BentoTilt className="border-hsla relative mb-7 h-80 w-full overflow-hidden rounded-md md:h-[53vh]">
           {" "}
           <BentoCardImage
-            src="img/hero-4.webp"
+            src="img/hero-2.webp"
             title={`Improve physical health, \n mental clarity, \n and emotional balance.`}
-            description={`With authentic 5th-generation Yang Style Tai Chi
+            description={`
                 `}
           />
         </BentoTilt>
@@ -127,16 +118,16 @@ const Features = () => {
             <BentoCardImage
               src="img/1.jpg"
               title={`Tai Chi welcomes everyone`}
-              description={`Any\n Age \n Culture \n Ability or Experience.
+              description={`
                 `}
             />
           </BentoTilt>
 
           <BentoTilt className="bento-tilt_1 row-span-1 ms-32 md:col-span-1 md:ms-0 ">
             <BentoCardImage
-              src="img/2.webp"
-              title={<>Our Lineage</>}
-              description={` We follow Master Tiancai Li, \n A 5th-generation Yang-style master, \n Direct Disciple of Grandmaster Yang Zhenduo, \n To preserve the true spirit of traditional Tai Chi.`}
+              src="img/hero-1.webp"
+              title={<>Authentic 5th generation Yang-style Master</>}
+              description={` `}
             />
           </BentoTilt>
 

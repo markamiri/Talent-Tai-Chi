@@ -32,7 +32,7 @@ const Contact = () => {
         <div className="flex flex-col items-center text-center z-10 relative">
           <p className="font-general text-[10px] uppercase"> </p>
           <p className="special-font mt-10 w-full font-zentry text-5xl leading-[0.9] md:text-[6rem]">
-            Start Your <br /> Tai Chi Journey <br /> Today
+            START YOUR <br /> TAI CHI JOURNEY <br /> TODAY
           </p>
           <Button2
             title="Contact Us"

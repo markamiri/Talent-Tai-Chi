@@ -66,13 +66,14 @@ body {
     clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
   }
 
-  .special-font b {
-    font-family: "Zentry";
-    font-feature-settings: "ss01" on;
+  .special-font {
+    font-family: Impact, Haettenschweiler, "Arial Black", sans-serif;
+    font-weight: 900;
+    letter-spacing: 0.02em;
   }
 
   .hero-heading {
-    @apply uppercase font-zentry font-black text-5xl sm:right-10 sm:text-7xl md:text-9xl lg:text-[12rem];
+    @apply uppercase font-black text-5xl sm:right-10 sm:text-7xl md:text-9xl lg:text-[12rem];
   }
 
   .about-subtext {

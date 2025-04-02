@@ -64,7 +64,7 @@ const Story = () => {
                   onMouseMove={handleMouseMove}
                   width="1280"
                   height="720"
-                  className="w-full h-full md:h-[300px] pt-5 object-cover md:object-contain"
+                  className="w-full h-full md:h-[500px] pt-5 object-cover md:object-contain"
                   src="/img/3.jpg"
                   alt="entrance"
                 />

@@ -7,7 +7,7 @@ const Hero = () => {
   const [currentIndex, setCurrentIndex] = useState(1);
   const [isLoading, setIsLoading] = useState(true);
 
-  const getImageSrc = (index) => `img/hero-${index}.webp`;
+  const getImageSrc = (index) => `img/hero-4.webp`;
 
   // Auto-cycle slideshow every 5 seconds (after load)
   useEffect(() => {
@@ -43,9 +43,11 @@ const Hero = () => {
           loading="eager"
           width="1280"
           height="720"
-          className={`absolute left-0 top-0 size-full object-cover object-center transition-opacity duration-700 ${
-            isLoading ? "blur-sm" : "blur-0"
-          }`}
+          className={`absolute left-0 top-0 size-full object-cover object-[calc(100%+100px)_center]
+
+ md:object-center transition-opacity duration-700 ${
+   isLoading ? "blur-sm" : "blur-0"
+ }`}
           onLoad={handleImageLoad}
         />
 
